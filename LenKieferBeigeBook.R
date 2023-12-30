@@ -169,7 +169,63 @@ get_data_f <- function(){
     mutate(page=row_number()) %>% 
     ungroup() 
   
-  fed_text_raw_packed <- fed_text_raw
+  beige.links.0307<-
+    tibble::tribble(
+      ~pdfile,   ~report, ~report.date,
+      "G:/My Drive/blog2/Articles/LenKieferBeigeBook/BB0307/FRB_ Beige Book--Full report--April 20, 2005.pdf", 20050420L, "2005-04-20",
+      "G:/My Drive/blog2/Articles/LenKieferBeigeBook/BB0307/FRB_ Beige Book--Full report--April 25, 2007.pdf", 20070425L, "2007-04-25",
+      "G:/My Drive/blog2/Articles/LenKieferBeigeBook/BB0307/FRB_ Beige Book--Full report--April 26, 2006.pdf", 20060426L, "2006-04-26",
+      "G:/My Drive/blog2/Articles/LenKieferBeigeBook/BB0307/FRB_ Beige Book--Full report--December 1, 2004.pdf", 20041201L,	"2004-12-01",
+      "G:/My Drive/blog2/Articles/LenKieferBeigeBook/BB0307/FRB_ Beige Book--Full report--January 17, 2007.pdf", 20070117L, "2007-01-17",
+      "G:/My Drive/blog2/Articles/LenKieferBeigeBook/BB0307/FRB_ Beige Book--Full report--January 18, 2006.pdf", 20060118L, "2006-01-18",
+      "G:/My Drive/blog2/Articles/LenKieferBeigeBook/BB0307/FRB_ Beige Book--Full report--January 19, 2005.pdf", 20050119L, "2005-01-19",
+      "G:/My Drive/blog2/Articles/LenKieferBeigeBook/BB0307/FRB_ Beige Book--Full report--July 25, 2007.pdf",	20070725L, "2007-07-25",
+      "G:/My Drive/blog2/Articles/LenKieferBeigeBook/BB0307/FRB_ Beige Book--Full report--July 26, 2006.pdf",	20060726L, "2006-07-26",
+      "G:/My Drive/blog2/Articles/LenKieferBeigeBook/BB0307/FRB_ Beige Book--Full report--July 27, 2005.pdf",	20050727L, "2005-07-27",
+      "G:/My Drive/blog2/Articles/LenKieferBeigeBook/BB0307/FRB_ Beige Book--Full report--July 28, 2004.pdf",	20040728L, "2004-07-28",
+      "G:/My Drive/blog2/Articles/LenKieferBeigeBook/BB0307/FRB_ Beige Book--Full report--June 13, 2007.pdf",	20070613L, "2007-06-13",
+      "G:/My Drive/blog2/Articles/LenKieferBeigeBook/BB0307/FRB_ Beige Book--Full report--June 14, 2006.pdf",	20060614L, "2006-06-14",
+      "G:/My Drive/blog2/Articles/LenKieferBeigeBook/BB0307/FRB_ Beige Book--Full report--June 15, 2005.pdf",	20050615L, "2005-06-15",
+      "G:/My Drive/blog2/Articles/LenKieferBeigeBook/BB0307/FRB_ Beige Book--Full report--June 16, 2004.pdf",	20040616L, "2004-06-16",
+      "G:/My Drive/blog2/Articles/LenKieferBeigeBook/BB0307/FRB_ Beige Book--Full report--March 15, 2006.pdf", 20060315L, "2006-03-15",
+      "G:/My Drive/blog2/Articles/LenKieferBeigeBook/BB0307/FRB_ Beige Book--Full report--March 7, 2007.pdf",	20070307L, "2007-03-07",
+      "G:/My Drive/blog2/Articles/LenKieferBeigeBook/BB0307/FRB_ Beige Book--Full report--March 9, 2005.pdf",	20050309L, "2005-03-09",
+      "G:/My Drive/blog2/Articles/LenKieferBeigeBook/BB0307/FRB_ Beige Book--Full report--November 28, 2007.pdf",	20071128L, "2007-11-28",
+      "G:/My Drive/blog2/Articles/LenKieferBeigeBook/BB0307/FRB_ Beige Book--Full report--November 30, 2005.pdf",	20051130L, "2005-11-30",
+      "G:/My Drive/blog2/Articles/LenKieferBeigeBook/BB0307/FRB_ Beige Book--Full report--October 12, 2006.pdf",	20061012L,	"2006-10-12",
+      "G:/My Drive/blog2/Articles/LenKieferBeigeBook/BB0307/FRB_ Beige Book--Full report--October 17, 2007.pdf",	20071017L, "2007-10-17",
+      "G:/My Drive/blog2/Articles/LenKieferBeigeBook/BB0307/FRB_ Beige Book--Full report--October 19, 2005.pdf",	20051019L, "2005-10-19",
+      "G:/My Drive/blog2/Articles/LenKieferBeigeBook/BB0307/FRB_ Beige Book--Full report--October 27, 2004.pdf",	20041027L, "2004-10-27",
+      "G:/My Drive/blog2/Articles/LenKieferBeigeBook/BB0307/FRB_ Beige Book--Full report--September 5, 2007.pdf",	20070905L, "2007-09-05",
+      "G:/My Drive/blog2/Articles/LenKieferBeigeBook/BB0307/FRB_ Beige Book--Full report--September 6, 2006.pdf",	20060906L, "2006-09-06",
+      "G:/My Drive/blog2/Articles/LenKieferBeigeBook/BB0307/FRB_ Beige Book--Full report--September 7, 2005.pdf",	20050907L, "2005-09-07",
+      "G:/My Drive/blog2/Articles/LenKieferBeigeBook/BB0307/FRB_ Beige Book--Full report--September 8, 2004.pdf",	20040908L, "2004-09-08",
+      "G:/My Drive/blog2/Articles/LenKieferBeigeBook/BB0307/FRB_ Beige Book--Summary--November 29, 2006.pdf",	20060929L, "2006-09-29",
+      "G:/My Drive/blog2/Articles/LenKieferBeigeBook/BB0307/FRB_ Beige Book - Full report--April 21, 2004.pdf",	20040421L,	"2004-04-21",
+      "G:/My Drive/blog2/Articles/LenKieferBeigeBook/BB0307/FRB_ Beige Book - Full report--April 23, 2003.pdf",	20030423L,	"2003-04-23",
+      "G:/My Drive/blog2/Articles/LenKieferBeigeBook/BB0307/FRB_ Beige Book - Full report--January 14, 2004.pdf", 20040114L, "2004-01-14",
+      "G:/My Drive/blog2/Articles/LenKieferBeigeBook/BB0307/FRB_ Beige Book - Full report--January 15, 2003.pdf", 20030115L, "2003-01-15",
+      "G:/My Drive/blog2/Articles/LenKieferBeigeBook/BB0307/FRB_ Beige Book - Full report--July 30, 2003.pdf",	20030730L, "2003-07-30",
+      "G:/My Drive/blog2/Articles/LenKieferBeigeBook/BB0307/FRB_ Beige Book - Full report--June 11, 2003.pdf",	20030611L, "2003-06-11",
+      "G:/My Drive/blog2/Articles/LenKieferBeigeBook/BB0307/FRB_ Beige Book - Full report--March 3, 2004.pdf",	20040303L, "2004-03-03",
+      "G:/My Drive/blog2/Articles/LenKieferBeigeBook/BB0307/FRB_ Beige Book - Full report--March 5, 2003.pdf",	20030305L, "2003-03-05",
+      "G:/My Drive/blog2/Articles/LenKieferBeigeBook/BB0307/FRB_ Beige Book - Full report--November 26, 2003.pdf",	20031126L, "2003-11-26",
+      "G:/My Drive/blog2/Articles/LenKieferBeigeBook/BB0307/FRB_ Beige Book - Full report--October 15, 2003.pdf",	20031015L, "2003-10-15"
+    )
+  
+  fed_text_raw0307 <-
+    beige.links.0307 %>%
+    mutate(text= map(pdfile,pdf_text))  %>% 
+    unnest(text) %>% 
+    group_by(report) %>%
+    # create a page number indicator
+    mutate(page=row_number()) %>% 
+    ungroup() 
+  
+  names(fed_text_raw0307)[1] <- "url"
+  fed_text_rawx <- bind_rows(fed_text_raw,fed_text_raw0307)
+  
+  fed_text_raw_packed <- fed_text_rawx
   
   fed_text_raw <-
     fed_text_raw %>% 
